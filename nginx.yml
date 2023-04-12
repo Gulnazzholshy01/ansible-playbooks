@@ -1,0 +1,14 @@
+---
+  - name: Install and Start apache
+    hosts: 10.116.0.2
+    tasks:
+      - name: Install nginx
+        yum: 
+          name: nginx
+          state: latest
+          
+      - name: Start & Enable nginx
+        systemd: 
+          name: nginx
+          state: started
+          enabled: yes
